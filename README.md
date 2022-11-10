@@ -1,6 +1,6 @@
 ## Sizer
 
-A simple Python script for iterating recursively over a directory
+A simple Python script for iterating recursively over a directory and returning all of the files sorted by size
 
 ### Dependencies
 
