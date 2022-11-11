@@ -21,6 +21,13 @@ def convert_size(size_bytes: int) -> str:
     return f"{s} {size_name[i]}"
 
 def get_size(file: Path) -> int:
+    '''
+        Given a path to a file
+        Returns the size of the file
+
+        It is wrapped due to catch exceptions thrown by temporary files
+        that were deleted during execution
+    '''
     try:
         return os.path.getsize(file)
     except FileNotFoundError as ex:
@@ -30,6 +37,12 @@ def get_size(file: Path) -> int:
     return 0
 
 def files_in_folder(path: str, order: str) -> list():
+    '''
+        path specifies a directory that should be iterated over recursively
+        order can be Ascending or Descending
+
+        Returns a list of (file_size, name_of_file) tupples 
+    '''
     files = list(Path(path).rglob('*'))
     try:
         file_sizes = [(get_size(file), file) for file in tqdm(files)]

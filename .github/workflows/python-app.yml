@@ -42,11 +42,5 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
-    - name: PyInstaller Windows
-      uses: JackMcKew/pyinstaller-action-windows@v0.1.2
-      with:
-        path: .
-    - name: PyInstaller Linux
-      uses: JackMcKew/pyinstaller-action-linux@0.1.4
 
 
