@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Build package
+    - name: Build package
       run: python -m build
   publish:
     runs-on: ubuntu-latest
